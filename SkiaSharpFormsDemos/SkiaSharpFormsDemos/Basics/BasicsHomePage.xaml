@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<local:HomeBasePage xmlns="http://xamarin.com/schemas/2014/forms"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                    xmlns:local="clr-namespace:SkiaSharpFormsDemos"
+                    x:Class="SkiaSharpFormsDemos.Basics.BasicsHomePage"
+                    Title="Кроссплатформенная анимация"
+                    Padding="10">
+	<TableView Intent="Menu">
+		<TableRoot>
+			<TableSection Title="Введите строки через точку с запятой">
+				<EntryCell Text="Тестовая строка1; тестовая строка2" x:Name="StringsToDraw"
+									 PropertyChanged="BindableObject_OnPropertyChanged">
+				</EntryCell>
+			</TableSection>
+			<TableSection Title="Введите размер шрифта">
+				<EntryCell Text="35" x:Name="TextSize"
+									 PropertyChanged="BindableObject_OnPropertyChanged">
+				</EntryCell>
+			</TableSection>
+			
+			<TableSection Title="">
+				<TextCell Text="Начать анимацию"
+									Detail=""
+									Command="{Binding NavigateCommand}"
+									CommandParameter="{x:Type local:Basics.SimpleCirclePage}"/>
+			</TableSection>
+		</TableRoot>
+	</TableView>
+</local:HomeBasePage>
